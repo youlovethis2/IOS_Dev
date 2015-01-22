@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TipViewController">
             <connections>
+                <outlet property="UserSetRate" destination="9sU-70-qHb" id="aiv-IL-Hxu"/>
                 <outlet property="billTextField" destination="ay7-fR-zLL" id="FpJ-cJ-lhi"/>
                 <outlet property="tipControl" destination="Bzj-4B-1yZ" id="GG7-E7-Roj"/>
                 <outlet property="tipLabel" destination="ZTA-Si-can" id="fOK-bp-hgr"/>
@@ -33,13 +34,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ay7-fR-zLL">
-                    <rect key="frame" x="179" y="92" width="121" height="30"/>
+                    <rect key="frame" x="160" y="92" width="121" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                 </textField>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$2.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTA-Si-can">
-                    <rect key="frame" x="257" y="147" width="43" height="21"/>
+                    <rect key="frame" x="199" y="147" width="102" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
@@ -56,13 +57,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$3.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gy5-9h-f6Y">
-                    <rect key="frame" x="238" y="238" width="80" height="34"/>
+                    <rect key="frame" x="180" y="238" width="121" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bzj-4B-1yZ">
-                    <rect key="frame" x="20" y="332" width="281" height="29"/>
+                    <rect key="frame" x="20" y="320" width="281" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <segments>
                         <segment title="10%"/>
@@ -73,6 +74,28 @@
                         <action selector="click:" destination="-1" eventType="valueChanged" id="U5r-Jn-GqP"/>
                     </connections>
                 </segmentedControl>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmg-h4-pbH">
+                    <rect key="frame" x="180" y="394" width="0.0" height="0.0"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sU-70-qHb">
+                    <rect key="frame" x="199" y="394" width="42" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp5-r9-2fk">
+                    <rect key="frame" x="26" y="390" width="116" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Use Default Rate">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="useDefault:" destination="-1" eventType="touchUpInside" id="0LW-C5-sLG"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.97414507534579664" green="0.9577988593161556" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>
@@ -80,11 +103,17 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
                 <outletCollection property="gestureRecognizers" destination="Hsx-r0-fcr" appends="YES" id="bbn-Ng-Pcc"/>
+                <outletCollection property="gestureRecognizers" destination="D9n-Kd-RvD" appends="YES" id="0Tq-jM-N97"/>
             </connections>
         </view>
         <tapGestureRecognizer id="Hsx-r0-fcr">
             <connections>
                 <action selector="click:" destination="-1" id="1Qm-JP-Hmz"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="D9n-Kd-RvD">
+            <connections>
+                <action selector="changeTipDate:" destination="-1" id="C3p-Ib-kVd"/>
             </connections>
         </tapGestureRecognizer>
     </objects>
